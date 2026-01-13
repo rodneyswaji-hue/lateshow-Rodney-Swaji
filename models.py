@@ -40,7 +40,7 @@ class Guest(db.Model, SerializerMixin):
     name = db.Column(db.String, nullable=False)
     occupation = db.Column(db.String, nullable=False)
 
-    # Relationship: One Guest has many Appearances
+    # Relationship: One  has many Appearances
     appearances = db.relationship('Appearance', back_populates='guest', cascade='all, delete-orphan')
     
     episodes = association_proxy('appearances', 'episode')
