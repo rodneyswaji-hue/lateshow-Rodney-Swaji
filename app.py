@@ -28,7 +28,7 @@ class EpisodeByID(Resource):
         if not episode:
             return make_response(jsonify({"error": "Episode not found"}), 404)
         
-        # The prompt requires nested appearances, and inside appearances, the guest info.
+        # The prompt requires nested appearances and inside appearances, the guest info.
         # Our model serialize_rules handle most of this, but we need to ensure deep serialization matches.
         return make_response(jsonify(episode.to_dict()), 200)
 
