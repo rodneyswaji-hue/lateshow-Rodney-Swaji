@@ -58,7 +58,7 @@ class Appearance(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.Integer, nullable=False)
     
-    # Foreign Keys
+    # Foreign Key
     episode_id = db.Column(db.Integer, db.ForeignKey('episodes.id'))
     guest_id = db.Column(db.Integer, db.ForeignKey('guests.id'))
 
